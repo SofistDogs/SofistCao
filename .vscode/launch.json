@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SofistcaoApplication<sofistcao>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "sofistcao.sofistcao.SofistcaoApplication",
+            "projectName": "sofistcao",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
