@@ -8,6 +8,17 @@
             "mainClass": "sofistcao.sofistcao.SofistcaoApplication",
             "projectName": "sofistcao",
             "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=54448 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=sofistcao"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SofistcaoApplication<sofistcao>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "sofistcao.pet.sofistcao.SofistcaoApplication",
+            "projectName": "sofistcao",
+            "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
     ]
