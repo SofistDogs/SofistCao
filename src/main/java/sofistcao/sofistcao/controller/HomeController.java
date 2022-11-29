@@ -12,4 +12,14 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/cadastroCliente")
+    public String cadastroCliente() {
+        return "cadastroCliente";
+    }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
 }
