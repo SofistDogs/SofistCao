@@ -27,4 +27,25 @@ public class HomeController {
         return "cadastroAnimal";
     }
 
+    
+    @GetMapping("/cadastroVacina")
+    public String cadastroVacina() {
+        return "cadastroVacina";
+    }
+
+    @GetMapping("/consultaAnimal")
+    public String consultaAnimal() {
+        return "consultaAnimal";
+    }
+
+    @GetMapping("/consultaVacinas")
+    public String consultaVacina() {
+        return "consultaVacinas";
+    }
+
+    @GetMapping("/consultaClientes")
+    public String consultaCliente() {
+        return "consultaClientes";
+    }
+
 }
