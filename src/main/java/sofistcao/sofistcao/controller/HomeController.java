@@ -12,14 +12,19 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
     @GetMapping("/cadastroCliente")
     public String cadastroCliente() {
         return "cadastroCliente";
     }
 
-    @GetMapping("/login")
-    public String login() {
-        return "login";
+    @GetMapping("/cadastroAnimal")
+    public String cadastroAnimal() {
+        return "cadastroAnimal";
     }
 
 }
