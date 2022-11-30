@@ -9,7 +9,7 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 
-<body class="">
+<body style="background-color: #eef5f8;">
     <nav class="navbar  navbar-expand-lg" style="background-color: #a5c1ce;">
         <div class="container-fluid">
 
@@ -50,7 +50,6 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="consultaAnimal">Lista de Animais</a></li>
                                 <li><a class="dropdown-item" href="cadastroAnimal">Novo Animal</a></li>
-                                <li><a class="dropdown-item" href="vacinacaoAnimal">Vacinas do Animal</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -63,12 +62,23 @@
                                 <li><a class="dropdown-item" href="cadastroVacina">Nova Vacina</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Cartão de Vacinas
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="vacinacaoAnimal">Vacinas do Animal</a></li>
+                                <li><a class="dropdown-item" href="vacinarAnimal">Vacinar</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
         </div>
     </nav>
-    <main th:replace="this :: conteudo"></main>
-
+    <div class="container">
+        <main th:replace="this :: conteudo"></main>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>

@@ -52,4 +52,9 @@ public class HomeController {
         return "vacinacaoAnimal";
     }
 
+    @GetMapping("/vacinarAnimal")
+    public String vacinarAnimal() {
+        return "vacinarAnimal";
+    }
+
 }
