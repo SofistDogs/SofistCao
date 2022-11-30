@@ -27,7 +27,6 @@ public class HomeController {
         return "cadastroAnimal";
     }
 
-    
     @GetMapping("/cadastroVacina")
     public String cadastroVacina() {
         return "cadastroVacina";
@@ -46,6 +45,11 @@ public class HomeController {
     @GetMapping("/consultaClientes")
     public String consultaCliente() {
         return "consultaClientes";
+    }
+
+    @GetMapping("/vacinacaoAnimal")
+    public String vacinacaoAnimal() {
+        return "vacinacaoAnimal";
     }
 
 }
