@@ -25,15 +25,17 @@
                         <label for="endereco" class="form-label "> Senha </label>
                         <input type="text" class="form-control" placeholder="No máximo 15 caracteres" maxlength="15">
                     </div>
-                    <button type="submit" class="btn text-light" style="background-color: #004275;">Entrar</button>
+                    <button type="button" class="btn text-light" style="background-color: #004275;"
+                        onclick="window.open('home','_self')">Entrar</button>
                     <a class="m-3" href="cadastroCliente">Ainda não é cadastrado? Clique aqui</a>
                 </form>
             </div>
         </div>
         <div class="col">
-            <img th:src="@{img/LOGO2.jpg}" width="50%">
+            <img th:src="@{img/LOGO2.jpg}">
         </div>
     </div>
 </body>
+
 
 </html>
