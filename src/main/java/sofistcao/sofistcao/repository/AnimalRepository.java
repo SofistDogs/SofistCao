@@ -28,6 +28,7 @@ public class AnimalRepository {
                 (registro, contador) -> {
                     Animal animal = new Animal();
                     animal.setId_animal(registro.getLong("ID_ANIMAL"));
+                    animal.setNome_animal(registro.getString("NOME_ANIMAL"));
                     animal.setEspecie(registro.getString("ESPECIE"));
                     animal.setRaca(registro.getString("RACA"));
                     animal.setData_nasc(registro.getString("DATA_NASC"));

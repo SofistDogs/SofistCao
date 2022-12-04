@@ -7,27 +7,22 @@
             <table class="table table-light">
                 <thead>
                     <tr>
+                        <th scope="col">#</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">Tipo de Animal</th>
+                        <th scope="col">Tutor</th>
+                        <th scope="col">Espécie</th>
                         <th scope="col">Raça</th>
                         <th scope="col">Sexo</th>
-                        <th scope="col">Idade</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="">
-                        <td scope="row">Yoruichi</td>
-                        <td>Gato</td>
-                        <td>Vira-lata</td>
-                        <td>F</td>
-                        <td>4 Anos</td>
-                    </tr>
-                    <tr class="">
-                        <td scope="row">Hachiko</td>
-                        <td>Cachorrro</td>
-                        <td>Akita</td>
-                        <td>M</td>
-                        <td>12 Anos</td>
+                    <tr th:each="animal : ${animais}">
+                        <th scope="row" th:text="${animal.id_animal}"></th>
+                        <td th:text="${animal.nome_animal}"></td>
+                        <td th:text="${animal.tutor.nome_cliente}"></td>
+                        <td th:text="${animal.especie}"></td>
+                        <td th:text="${animal.raca}"></td>
+                        <td th:text="${animal.sexo_animal}"></td>
                     </tr>
                 </tbody>
             </table>
