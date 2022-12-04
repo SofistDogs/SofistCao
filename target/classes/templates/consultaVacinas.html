@@ -6,7 +6,8 @@
         <div class="table-responsive">
             <table class="table table-light ">
                 <thead>
-                    <tr>
+                    <tr class="text-center">
+                        <th scope="col">#</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Periodicidade</th>
                         <th scope="col">Tipo</th>
@@ -14,21 +15,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="">
-                        <td scope="row">Antirrábica</td>
-                        <td>A cada 1 ano</td>
-                        <td>Imunizante</td>
-                        <td>*</td>
-
-                    </tr>
-                    <tr class="">
-                        <td scope="row">Giárdia</td>
-                        <td>A cada 1 ano</td>
-                        <td>Imunizante</td>
-                        <td> A vacina para o cachorro ficar protegido é administrada quando ele tem 12 semanas de idade.
-                            São aplicadas duas doses com intervalo de três a quatro semanas e deve ser feito um reforço
-                            anual de dose única.</td>
-
+                    <tr th:each="vaci : ${vacinas}" class="text-center">
+                        <th scope="row" th:text="${vaci.id_vacina}"></th>
+                        <td th:text="${vaci.nome_vacina}"></td>
+                        <td th:text="${vaci.periodicidade}"></td>
+                        <td th:text="${vaci.tipo_vacina}"></td>
+                        <td th:text="${vaci.desc_vacina}">*</td>
                     </tr>
                 </tbody>
             </table>

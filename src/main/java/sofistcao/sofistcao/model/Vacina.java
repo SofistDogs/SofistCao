@@ -14,6 +14,6 @@ public class Vacina {
     private Long id_vacina;
 
     private Double periodicidade;
+    private String nome_vacina, tipo_vacina, desc_vacina;
 
-    private String tipo_vacina, desc_vacina;
 }
