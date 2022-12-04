@@ -1,20 +1,22 @@
 <html th:include="template :: modelo" lang="pt-br">
 <div th:fragment="conteudo">
 
-    <form action="" method="post">
+    <form action="/cadastroCliente" method="post" th:object="${cliente}">
         <h1 class="text-center">Cadastre-se</h1>
         <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
-            <input type="text" id="nome" class="form-control" placeholder="Seu nome completo">
+            <input type="text" id="nome" class="form-control" placeholder="Seu nome completo"
+                th:field="*{nome_cliente}">
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="text" id="email" class="form-control" placeholder="seuemail@dominio.com">
+            <input type="text" id="email" class="form-control" placeholder="seuemail@dominio.com" th:field="*{login}">
         </div>
 
         <div class="mb-3">
             <label for="senha" class="form-label">Senha</label>
-            <input type="text" id="senha" class="form-control" placeholder="No máximo 15 caracteres" maxlength="15">
+            <input type="text" id="senha" class="form-control" placeholder="No máximo 15 caracteres" maxlength="15"
+                th:field="*{senha}">
         </div>
         <div class="mb-3">
             <label for="confSenha" class="form-label">Confirmar Senha</label>
