@@ -1,5 +1,7 @@
 package sofistcao.sofistcao.repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,16 @@ public class AnimalRepository {
                     animal.setTutor(cliRepo.findById(registro.getLong("CLIENTE_ID_CLIENTE")));
                     return animal;
                 });
+    }
+
+    public Animal findById(Long id) {
+        return jdbc.queryForObject("SELECT * from animal where ID_ANIMAL=?", this::mapper, id);
+    }
+
+    private Animal mapper(ResultSet registro, int contador) throws SQLException {
+        return new Animal(registro.getLong("ID_ANIMAL"), registro.getString("NOME_ANIMAL"),
+                registro.getString("ESPECIE"), registro.getString("RACA"), registro.getString("DATA_NASC"),
+                registro.getString("SEXO_ANIMAL"), cliRepo.findById(registro.getLong("CLIENTE_ID_CLIENTE")));
     }
 
 }
