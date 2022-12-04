@@ -1,6 +1,6 @@
 <html th:include="template :: modelo" lang="pt-br">
 <div th:fragment="conteudo">
-    <h1 class="text-center">Cadastro Cliente:</h1>
+    <h1 class="text-center">Clientes:</h1>
     <div>
         <div class="table-responsive">
             <table class="table table-light">
@@ -11,11 +11,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="">
-                        <td scope="row">Juca Silva</td>
-                    </tr>
-                    <tr class="">
-                        <td scope="row">Wanda Addams</td>
+                    <tr th:each="cliente : ${clientes}">
+                        <td scope="row" th:text="${cliente.nome_cliente}">Juca Silva</td>
                     </tr>
                 </tbody>
             </table>
