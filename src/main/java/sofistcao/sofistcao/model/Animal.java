@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 public class Animal {
     private Long id_animal;
 
-    private String nome_animal, raca, data_nasc, sexo_animal;
+    private String nome_animal, raca, data_nasc, sexo_animal, especie;
 
-    private Cliente id_cliente;
+    private Cliente tutor;
 
 }

@@ -12,10 +12,5 @@ import sofistcao.sofistcao.controller.Procedimento;
 public class ProcedimentoRepository {
     @Autowired
     JdbcTemplate jdbc;
-
-    /*
-     * public List<Procedimento> findAll() {
-     * return jdbc.query("SELECT * FROM procedimento", this::mapper);
-     * }
-     */
+    
 }
