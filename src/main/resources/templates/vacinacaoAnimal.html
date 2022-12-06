@@ -15,7 +15,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="procedimento : ${procedimento}" class="text-center">
+                    <tr th:each="procedimento : ${procedimentos}" class="text-center">
                         <td scope="row" th:text="${procedimento.id_procedimento}"></td>
                         <td th:text="${procedimento.animal}"></td>
                         <td th:text="${procedimento.data_vacinacao}"></td>
