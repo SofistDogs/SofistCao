@@ -1,32 +1,33 @@
 <html th:include="template :: modelo" lang="pt-br">
 <div th:fragment="conteudo">
-    <form action="" method="post" th:object="${procedimento}">
+
+    <form action="/vacinarAnimal" method="post" th:object="${procedimento}">
         <h1 class="text-center">Adione a nova vacina do animal:</h1>
         <div class="mb-3">
-            <label for="periodicidade" class="form-label">Animal</label>
-            <select th:field="*{animal.id_animal}" class="form-select form-select" id="periodicidade">
+            <label for="animal" class="form-label">Animal</label>
+            <select th:field="*{animal.id_animal}" class="form-select form-select" id="animal">
                 <option th:each="animal : ${animal}" th:value="${animal.id_animal}" th:text="${animal.nome_animal}">
                 </option>
             </select>
         </div>
 
         <div class="mb-3">
-            <label for="periodicidade" class="form-label">Vacina</label>
-            <select class="form-select form-select" name="" id="periodicidade">
-                <option selected value="0">Selecione</option>
-                <option value="0,5">Antirrábica</option>
-                <option value="1,0">Giárdia</option>
+            <label for="vacina" class="form-label">Vacina</label>
+            <select th:field="*{vacina.id_vacina}" class="form-select form-select" id="vacina">
+                <option th:each="vacina : ${vacina}" th:value="${vacina.id_vacina}" th:text="${vacina.nome_vacina}">
+                </option>
             </select>
         </div>
 
         <div class="mb-3">
             <label for="tipoVac" class="form-label">Data</label>
-            <input type="date" id="tipoVac" class="form-control" placeholder="Qual o principal foco dessa vacina?">
+            <input type="date" id="tipoVac" class="form-control" th:field="*{data_vacinacao}">
         </div>
 
         <div class="mb-3">
             <label for="tipoVac" class="form-label">Observações</label>
-            <input type="text" id="tipoVac" class="form-control" placeholder="Alguma observação? (Opcional)">
+            <input type="text" id="tipoVac" class="form-control" placeholder="Alguma observação? (Opcional)"
+                th:field="*{observacoes}">
         </div>
 
         <button type="submit" class="btn text-light" style="background-color: #004275;">Cadastrar</button>
