@@ -1,33 +1,26 @@
 <html th:include="template :: modelo" lang="pt-br">
-<div th:fragment="conteudo" class="p-3">
+<div th:fragment="conteudo">
 
-    <h1 class="text-center">Cartão de Vacinas: Hachiko</h1>
-    <div class="p-3">
+    <h1 class="text-center">Cartão de Vacinas:</h1>
+    <div>
         <div class="table-responsive">
             <table class="table table-light">
                 <thead>
-                    <tr>
+                    <tr class="text-center">
+                        <th scope="col">#:</th>
+                        <th scope="col">Animal:</th>
                         <th scope="col">Data:</th>
                         <th scope="col">Vacina:</th>
                         <th scope="col">Observações:</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="">
-                        <td scope="row">22/03/2021</td>
-                        <td>Antirrábica</td>
-                        <td>Muito bonzinho</td>
-                    </tr>
-                    <tr class="">
-                        <td scope="row">20/04/2021</td>
-                        <td>Giárdia</td>
-                        <td>Cão era adoravel</td>
-
-                    </tr>
-                    <tr class="">
-                        <td scope="row">28/03/2022</td>
-                        <td>Antirrábica</td>
-                        <td>Muito bonzinho</td>
+                    <tr th:each="procedimento : ${procedimento}" class="text-center">
+                        <td scope="row" th:text="${procedimento.id_procedimento}"></td>
+                        <td th:text="${procedimento.animal}"></td>
+                        <td th:text="${procedimento.data_vacinacao}"></td>
+                        <td th:text="${procedimento.vacina}"></td>
+                        <td th:text="${procedimento.animal}"></td>
                     </tr>
                 </tbody>
             </table>
