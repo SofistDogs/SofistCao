@@ -17,10 +17,10 @@
                 <tbody>
                     <tr th:each="procedimento : ${procedimentos}" class="text-center">
                         <td scope="row" th:text="${procedimento.id_procedimento}"></td>
-                        <td th:text="${procedimento.animal}"></td>
+                        <td th:text="${procedimento.animal.nome_animal}"></td>
                         <td th:text="${procedimento.data_vacinacao}"></td>
-                        <td th:text="${procedimento.vacina}"></td>
-                        <td th:text="${procedimento.animal}"></td>
+                        <td th:text="${procedimento.vacina.nome_vacina}"></td>
+                        <td th:text="${procedimento.observacoes}"></td>
                     </tr>
                 </tbody>
             </table>
