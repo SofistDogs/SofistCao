@@ -1,15 +1,15 @@
 <html th:include="template :: modelo" lang="pt-br">
 <div th:fragment="conteudo">
-    <form action="" method="post">
+    <form action="" method="post" th:object="${procedimento}">
         <h1 class="text-center">Adione a nova vacina do animal:</h1>
         <div class="mb-3">
             <label for="periodicidade" class="form-label">Animal</label>
-            <select class="form-select form-select" name="" id="periodicidade">
-                <option selected value="0">Selecione</option>
-                <option value="0,5">Yoruichi</option>
-                <option value="1,0">Hachiko</option>
+            <select th:field="*{animal.id_animal}" class="form-select form-select" id="periodicidade">
+                <option th:each="animal : ${animal}" th:value="${animal.id_animal}" th:text="${animal.nome_animal}">
+                </option>
             </select>
         </div>
+
         <div class="mb-3">
             <label for="periodicidade" class="form-label">Vacina</label>
             <select class="form-select form-select" name="" id="periodicidade">
