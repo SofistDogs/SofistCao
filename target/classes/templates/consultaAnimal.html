@@ -13,6 +13,8 @@
                         <th scope="col">Espécie</th>
                         <th scope="col">Raça</th>
                         <th scope="col">Sexo</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +25,12 @@
                         <td th:text="${animal.especie}"></td>
                         <td th:text="${animal.raca}"></td>
                         <td th:text="${animal.sexo_animal}"></td>
+                        <td> <button type="button" class="btn text-light" style="background-color: #004275;"
+                                onclick="window.open('home','_self')">Editar</button></td>
+                        <td> <button type="button" class="btn text-light" style="background-color: #004275;"
+                                onclick="window.open(`vacinarAnimal?nomeAnimal=animal.id_animal`,'_self')">Vacinar</button>
+
+                        </td>
                     </tr>
                 </tbody>
             </table>
