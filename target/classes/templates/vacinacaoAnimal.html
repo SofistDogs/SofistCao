@@ -7,7 +7,6 @@
             <table class="table table-light">
                 <thead>
                     <tr class="text-center">
-                        <th scope="col">#:</th>
                         <th scope="col">Animal:</th>
                         <th scope="col">Data:</th>
                         <th scope="col">Vacina:</th>
@@ -16,7 +15,6 @@
                 </thead>
                 <tbody>
                     <tr th:each="procedimento : ${procedimentos}" class="text-center">
-                        <td scope="row" th:text="${procedimento.id_procedimento}"></td>
                         <td th:text="${procedimento.animal.nome_animal}"></td>
                         <td th:text="${procedimento.data_vacinacao}"></td>
                         <td th:text="${procedimento.vacina.nome_vacina}"></td>
