@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import sofistcao.sofistcao.model.Animal;
+import sofistcao.sofistcao.model.Procedimento;
 import sofistcao.sofistcao.repository.AnimalRepository;
 import sofistcao.sofistcao.repository.ClienteRepository;
 
@@ -39,6 +41,21 @@ public class AnimalController {
         List<Animal> lista = repository.findAll();
         model.addAttribute("animais", lista);
         return "consultaAnimal";
+    }
+
+    @GetMapping("editarAnimal")
+    public String mostraFormEditaAniaml(@RequestParam(value = "id", required = false) Long cod, Model model) {
+        System.out.println(cod);
+        Animal animal = repository.findById(cod);
+        model.addAttribute("anima", animal);
+        model.addAttribute("cliente", repository2.findAll());
+        return "editaAnimal";
+    }
+
+    @PostMapping("gravaanimalmodificado")
+    public String gravaAnimalModificado(Animal animal) {
+        repository.saveModification(animal);
+        return "redirect:/home";
     }
 
 }

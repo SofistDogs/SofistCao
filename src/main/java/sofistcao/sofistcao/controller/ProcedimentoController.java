@@ -45,4 +45,5 @@ public class ProcedimentoController {
         model.addAttribute("procedimentos", lista);
         return "vacinacaoAnimal";
     }
+
 }

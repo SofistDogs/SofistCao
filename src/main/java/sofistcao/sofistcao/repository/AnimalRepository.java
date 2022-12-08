@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import sofistcao.sofistcao.model.Animal;
+import sofistcao.sofistcao.model.Cliente;
 
 @Repository
 public class AnimalRepository {
@@ -45,9 +46,22 @@ public class AnimalRepository {
     }
 
     private Animal mapper(ResultSet registro, int contador) throws SQLException {
-        return new Animal(registro.getLong("ID_ANIMAL"), registro.getString("NOME_ANIMAL"),
-                registro.getString("ESPECIE"), registro.getString("RACA"), registro.getString("DATA_NASC"),
-                registro.getString("SEXO_ANIMAL"), cliRepo.findById(registro.getLong("CLIENTE_ID_CLIENTE")));
+        Animal animal = new Animal();
+        animal.setId_animal(registro.getLong("ID_ANIMAL"));
+        animal.setNome_animal(registro.getString("NOME_ANIMAL"));
+        animal.setEspecie(registro.getString("ESPECIE"));
+        animal.setRaca(registro.getString("RACA"));
+        animal.setData_nasc(registro.getString("DATA_NASC"));
+        animal.setSexo_animal(registro.getString("SEXO_ANIMAL"));
+        animal.setTutor(cliRepo.findById(registro.getLong("CLIENTE_ID_CLIENTE")));
+        return animal;
+    }
+
+    public void saveModification(Animal animal) {
+        String sql = "update animal set NOME_ANIMAL=?, ESPECIE=?, RACA=?, DATA_NASC=?, SEXO_ANIMAL=?, CLIENTE_ID_CLIENTE=? where ID_ANIMAL =?";
+        jdbc.update(sql, animal.getNome_animal(), animal.getEspecie(),
+                animal.getRaca(), animal.getData_nasc(), animal.getSexo_animal(),
+                animal.getTutor().getId_cliente(), animal.getId_animal());
     }
 
 }
