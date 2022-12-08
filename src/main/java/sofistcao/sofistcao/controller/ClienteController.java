@@ -43,7 +43,7 @@ public class ClienteController {
     }
 
     @PostMapping("gravaclientemodificado")
-    public String gravaAnimalModificado(Cliente cliente) {
+    public String gravaClienteModificado(Cliente cliente) {
         repository.saveModification(cliente);
         return "redirect:/home";
     }

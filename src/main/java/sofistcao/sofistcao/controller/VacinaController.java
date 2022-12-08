@@ -35,7 +35,7 @@ public class VacinaController {
     }
 
     @GetMapping("editaVacina")
-    public String mostraFormEditaCliente(@RequestParam(value = "id", required = false) Long cod, Model model) {
+    public String mostraFormEditaVacina(@RequestParam(value = "id", required = false) Long cod, Model model) {
         System.out.println(cod);
         Vacina vacina = repository.findById(cod);
         model.addAttribute("vacina", vacina);
@@ -43,7 +43,7 @@ public class VacinaController {
     }
 
     @PostMapping("gravavacinamodificado")
-    public String gravaAnimalModificado(Vacina vacina) {
+    public String gravaVacinaModificado(Vacina vacina) {
         repository.saveModification(vacina);
         return "redirect:/home";
     }
