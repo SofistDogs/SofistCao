@@ -1,0 +1,41 @@
+<html th:include="template :: modelo" lang="pt-br">
+<div th:fragment="conteudo">
+    <form action="/gravavacinamodificado" method="post" th:object="${vacina}">
+
+        <input type="hidden" th:field="*{id_vacina}">
+        <h1 th:text="*{nome_vacina}" class="text-center">Cadastro de Vacina</h1>
+
+        <div class="mb-3">
+            <label for="nomeVac" class="form-label">Nome</label>
+            <input type="text" id="nomeVac" class="form-control" placeholder="Nome da vacina" maxlength="45"
+                th:field="*{nome_vacina}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="periodicidade" class="form-label">Periodicidade</label>
+            <select class="form-select form-select" name="" id="periodicidade" th:field="*{periodicidade}">
+                <option selected value="0.0">Selecione</option>
+                <option value="0.5">A cada 6 meses</option>
+                <option value="1.0">A cada 1 ano</option>
+                <option value="3.0">A cada 3 anos</option>
+                <option value="15.0">Dose única</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="tipoVac" class="form-label">Tipo</label>
+            <input type="text" id="tipoVac" class="form-control" placeholder="Qual o principal foco dessa vacina?"
+                th:field="*{tipo_vacina}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="tipoVac" class="form-label">Descrição</label>
+            <input type="text" id="tipoVac" class="form-control" placeholder="Alguma observação? (Opcional)"
+                th:field="*{desc_vacina}">
+        </div>
+
+        <button type="submit" class="btn text-light" style="background-color: #004275;">Cadastrar</button>
+    </form>
+</div>
+
+</html>

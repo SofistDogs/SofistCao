@@ -12,6 +12,8 @@
                         <th scope="col">Periodicidade</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Descrição</th>
+                        <th scope="col"></th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -21,6 +23,8 @@
                         <td th:text="${vaci.periodicidade}"></td>
                         <td th:text="${vaci.tipo_vacina}"></td>
                         <td th:text="${vaci.desc_vacina}">*</td>
+                        <td> <a style="background-color: #004275; color: white"
+                                th:href="@{/editaVacina(id=${vacina.id_vacina})}">Editar</a></td>
                     </tr>
                 </tbody>
             </table>

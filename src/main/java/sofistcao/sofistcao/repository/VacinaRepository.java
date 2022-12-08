@@ -17,7 +17,8 @@ public class VacinaRepository {
 
     public void save(Vacina vacina) {
         String sql = "insert into vacina(NOME_VACINA, PERIODICIDADE, TIPO_VACINA, DESC_VACINA) values (?,?,?,?);";
-        jdbc.update(sql, vacina.getNome_vacina(), vacina.getPeriodicidade(), vacina.getTipo_vacina(), vacina.getDesc_vacina());
+        jdbc.update(sql, vacina.getNome_vacina(), vacina.getPeriodicidade(), vacina.getTipo_vacina(),
+                vacina.getDesc_vacina());
     }
 
     public List<Vacina> findAll() {
@@ -30,7 +31,14 @@ public class VacinaRepository {
 
     private Vacina mapper(ResultSet registro, int contador) throws SQLException {
         return new Vacina(registro.getLong("ID_VACINA"), registro.getDouble("PERIODICIDADE"),
-                registro.getString("NOME_VACINA"), registro.getString("TIPO_VACINA"), registro.getString("DESC_VACINA"));
+                registro.getString("NOME_VACINA"), registro.getString("TIPO_VACINA"),
+                registro.getString("DESC_VACINA"));
+    }
+
+    public void saveModification(Vacina vacina) {
+        String sql = "update vacina set NOME_VACINA=?, PERIODICIDADE=?, TIPO_VACINA=?, DESC_VACINA=? where ID_CLIENTE =?";
+        jdbc.update(sql, vacina.getNome_vacina(), vacina.getPeriodicidade(),
+                vacina.getTipo_vacina(), vacina.getDesc_vacina(), vacina.getId_vacina());
     }
 
 }
