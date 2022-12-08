@@ -15,7 +15,7 @@
                     <tr th:each="cliente : ${clientes}">
                         <td scope="row" th:text="${cliente.nome_cliente}">Juca Silva</td>
                         <td> <a style="background-color: #004275; color: white"
-                                th:href="@{/editarCliente(id=${cliente.id_cliente})}">Editar</a></td>
+                                th:href="@{/editaCliente(id=${cliente.id_cliente})}">Editar</a></td>
                     </tr>
                 </tbody>
             </table>

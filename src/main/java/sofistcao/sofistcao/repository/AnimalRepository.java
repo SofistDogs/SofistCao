@@ -9,7 +9,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import sofistcao.sofistcao.model.Animal;
-import sofistcao.sofistcao.model.Cliente;
 
 @Repository
 public class AnimalRepository {

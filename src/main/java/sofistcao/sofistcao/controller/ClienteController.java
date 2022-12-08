@@ -34,17 +34,16 @@ public class ClienteController {
         return "consultaClientes";
     }
 
-    @GetMapping("editarCliente")
+    @GetMapping("editaCliente")
     public String mostraFormEditaCliente(@RequestParam(value = "id", required = false) Long cod, Model model) {
         System.out.println(cod);
         Cliente cliente = repository.findById(cod);
         model.addAttribute("cliente", cliente);
-        model.addAttribute("cliente", repository.findAll());
-        return "editarCliente";
+        return "editaCliente";
     }
 
     @PostMapping("gravaclientemodificado")
-    public String gravaClienteModificado(Cliente cliente) {
+    public String gravaAnimalModificado(Cliente cliente) {
         repository.saveModification(cliente);
         return "redirect:/home";
     }
