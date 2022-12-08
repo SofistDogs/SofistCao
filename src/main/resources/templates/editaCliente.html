@@ -1,0 +1,31 @@
+<html th:include="template :: modelo" lang="pt-br">
+<div th:fragment="conteudo">
+
+    <form action="/gravaclientemodificado" method="post" th:object="${cliente}">
+        <h1 class="text-center">Cadastre-se</h1>
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" id="nome" class="form-control" placeholder="Seu nome completo" th:field="*{nome_cliente}"
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" id="email" class="form-control" placeholder="seuemail@dominio.com" th:field="*{login}"
+                required>
+        </div>
+
+        <div class="mb-3">
+            <label for="senha" class="form-label">Senha</label>
+            <input type="text" id="senha" class="form-control" placeholder="No máximo 15 caracteres" maxlength="15"
+                th:field="*{senha}" required>
+        </div>
+        <div class="mb-3">
+            <label for="confSenha" class="form-label">Confirmar Senha</label>
+            <input type="text" id="confSenha" class="form-control" placeholder="No máximo 15 caracteres" maxlength="15"
+                required>
+        </div>
+        <button type="submit" class="btn text-light" style="background-color: #004275;">Cadastrar</button>
+    </form>
+</div>
+
+</html>

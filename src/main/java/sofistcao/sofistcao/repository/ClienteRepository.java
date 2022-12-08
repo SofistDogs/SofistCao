@@ -33,4 +33,10 @@ public class ClienteRepository {
                 registro.getString("LOGIN"), registro.getString("SENHA"));
     }
 
+    public void saveModification(Cliente cliente) {
+        String sql = "update animal set NOME_CLIENTE=?, LOGIN=?, SENHA=? where ID_CLIENTE =?";
+        jdbc.update(sql, cliente.getNome_cliente(), cliente.getLogin(),
+                cliente.getSenha());
+    }
+
 }
