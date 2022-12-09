@@ -27,7 +27,8 @@
                         <td th:text="${animal.sexo_animal}"></td>
                         <td> <a style="background-color: #004275; color: white"
                                 th:href="@{/editarAnimal(id=${animal.id_animal})}">Editar</a></td>
-                        <td> <a style="background-color: #004275;color: white" th:href="@{home}">Vacinar</a>
+                        <td> <a style="background-color: #004275; color: white"
+                                th:href="@{/vacinarAnimal(id=${animal.id_animal})}">Vacinar</a></td>
 
                         </td>
                     </tr>
