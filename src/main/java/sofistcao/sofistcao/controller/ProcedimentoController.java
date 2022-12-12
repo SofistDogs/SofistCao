@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import sofistcao.sofistcao.model.Procedimento;
 import sofistcao.sofistcao.repository.AnimalRepository;
@@ -26,10 +27,10 @@ public class ProcedimentoController {
     VacinaRepository repository3;
 
     @GetMapping("/vacinarAnimal")
-    public String mostrarCadastroProcedimento(Model model) {
-        model.addAttribute("procedimento", new Procedimento());
-        model.addAttribute("animal", repository2.findAll());
+    public String mostrarCadastroProcedimento(@RequestParam(value = "id", required = false) Long cod, Model model) {
+        model.addAttribute("animal", repository2.findById(cod));
         model.addAttribute("vacina", repository3.findAll());
+        model.addAttribute("procedimento", new Procedimento());
         return "vacinarAnimal";
     }
 

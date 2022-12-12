@@ -1,11 +1,16 @@
 <html th:include="template :: modelo" lang="pt-br">
 <div th:fragment="conteudo">
 
+    <h1 class="text-center">Adicione uma nova vacina</h1>
+    <div class="text-center mb-3">
+        <h2 class="d-inline">Animal: </h2>
+        <h2 class="d-inline" th:text="${animal.nome_animal}"></h2>
+    </div>
+
     <form action="/vacinarAnimal" method="post" th:object="${procedimento}">
-        <h1 class="text-center">Adione a nova vacina do animal:</h1>
-        <div class="mb-3">
-            <label for="animal" class="form-label">Animal</label>
-            <select th:field="*{animal.id_animal}" class="form-select form-select" id="animal">
+        <div class="mb-3" hidden>
+            <label for="batata" class="form-label">Animal</label>
+            <select type="hidden" th:field="*{animal.id_animal}" class="form-select form-select" id="batata">
                 <option th:each="animal : ${animal}" th:value="${animal.id_animal}" th:text="${animal.nome_animal}">
                 </option>
             </select>
@@ -22,7 +27,7 @@
 
         <div class="mb-3">
             <label for="tipoVac" class="form-label">Data</label>
-            <input type="date" id="tipoVac" class="form-control" th:field="*{data_vacinacao}">
+            <input type="date" id="tipoVac" class="form-control" th:field="*{data_vacinacao}" required>
         </div>
 
         <div class="mb-3">

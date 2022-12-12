@@ -20,6 +20,9 @@ public class ProcedimentoRepository {
     AnimalRepository animalRepo;
 
     public void save(Procedimento procedimento) {
+        
+        System.out.println(procedimento.getAnimal().getId_animal());
+        System.out.println(procedimento.getVacina().getId_vacina());
         String sql = "insert into vacinas_animal(DATA_VACINACAO, OBSERVACOES, VACINA_ID_VACINA, VACINA_ID_ANIMAL) values (?,?,?,?);";
         jdbc.update(sql, procedimento.getData_vacinacao(), procedimento.getObservacoes(),
                 procedimento.getVacina().getId_vacina(), procedimento.getAnimal().getId_animal());

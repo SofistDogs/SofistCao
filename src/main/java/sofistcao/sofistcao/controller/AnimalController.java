@@ -44,8 +44,7 @@ public class AnimalController {
     }
 
     @GetMapping("editarAnimal")
-    public String mostraFormEditaAniaml(@RequestParam(value = "id", required = false) Long cod, Model model) {
-        System.out.println(cod);
+    public String mostraFormEditaAniaml(@RequestParam(value = "id", required = false) Long cod, Model model) {        
         Animal animal = repository.findById(cod);
         model.addAttribute("anima", animal);
         model.addAttribute("cliente", repository2.findAll());
