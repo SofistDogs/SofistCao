@@ -15,6 +15,7 @@
                         <th scope="col">Sexo</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +31,9 @@
                         <td> <a style="background-color: #004275; color: white"
                                 th:href="@{/vacinarAnimal(id=${animal.id_animal})}">Vacinar</a></td>
 
+                        </td>
+                        <td> <a style="background-color: #004275; color: white"
+                                th:href="@{/vacinacaoPorAnimal(id=${animal.id_animal})}">Visualizar Vacinas</a></td>
                         </td>
                     </tr>
                 </tbody>

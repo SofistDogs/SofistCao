@@ -47,4 +47,12 @@ public class ProcedimentoController {
         return "vacinacaoAnimal";
     }
 
+    @GetMapping("/vacinacaoPorAnimal")
+    public String mostrarVacinasPorAnimal(@RequestParam(value = "id", required = false) Long cod, Model model) {
+        List<Procedimento> listaPorAnimal = repository.findAllByID(cod);
+        model.addAttribute("procedimentos", listaPorAnimal);
+        model.addAttribute("animal", repository2.findById(cod));
+        return "vacinacaoPorAnimal";
+    }
+
 }

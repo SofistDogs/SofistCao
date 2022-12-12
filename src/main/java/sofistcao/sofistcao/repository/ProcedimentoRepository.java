@@ -20,7 +20,7 @@ public class ProcedimentoRepository {
     AnimalRepository animalRepo;
 
     public void save(Procedimento procedimento) {
-        
+
         System.out.println(procedimento.getAnimal().getId_animal());
         System.out.println(procedimento.getVacina().getId_vacina());
         String sql = "insert into vacinas_animal(DATA_VACINACAO, OBSERVACOES, VACINA_ID_VACINA, VACINA_ID_ANIMAL) values (?,?,?,?);";
@@ -38,6 +38,18 @@ public class ProcedimentoRepository {
                     procedimento.setAnimal(animalRepo.findById(registro.getLong("VACINA_ID_ANIMAL")));
                     return procedimento;
                 });
+    }
+
+    public List<Procedimento> findAllByID(Long id) {
+        return jdbc.query("select * from vacinas_animal where VACINA_ID_ANIMAL = ?",
+                (registro, contador) -> {
+                    Procedimento procedimento = new Procedimento();
+                    procedimento.setData_vacinacao(registro.getString("DATA_VACINACAO"));
+                    procedimento.setObservacoes(registro.getString("OBSERVACOES"));
+                    procedimento.setVacina(vacinaRepo.findById(registro.getLong("VACINA_ID_VACINA")));
+                    procedimento.setAnimal(animalRepo.findById(registro.getLong("VACINA_ID_ANIMAL")));
+                    return procedimento;
+                }, id);
     }
 
 }

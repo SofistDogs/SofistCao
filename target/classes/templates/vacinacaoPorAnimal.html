@@ -1,0 +1,33 @@
+<html th:include="template :: modelo" lang="pt-br">
+<div th:fragment="conteudo">
+    <h1 class="text-center">Todas As Vacinas</h1>
+    <div class="text-center mb-3">
+        <h2 class="d-inline">Animal: </h2>
+        <h2 class="d-inline" th:text="${animal.nome_animal}"></h2>
+    </div>
+    <div>
+        <div class="table-responsive">
+            <table class="table table-light">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">Animal:</th>
+                        <th scope="col">Data:</th>
+                        <th scope="col">Vacina:</th>
+                        <th scope="col">Observações:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="procedimento : ${procedimentos}" class="text-center">
+                        <td th:text="${procedimento.animal.nome_animal}"></td>
+                        <td th:text="${procedimento.data_vacinacao}"></td>
+                        <td th:text="${procedimento.vacina.nome_vacina}"></td>
+                        <td th:text="${procedimento.observacoes}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+</html>
