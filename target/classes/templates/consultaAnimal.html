@@ -26,14 +26,14 @@
                         <td th:text="${animal.especie}"></td>
                         <td th:text="${animal.raca}"></td>
                         <td th:text="${animal.sexo_animal}"></td>
-                        <td> <a style="background-color: #004275; color: white"
+                        <td> <a class="btn text-light" style="background-color: #004275;"
                                 th:href="@{/editarAnimal(id=${animal.id_animal})}">Editar</a></td>
-                        <td> <a style="background-color: #004275; color: white"
+                        <td> <a class="btn text-light" style="background-color: #004275;"
                                 th:href="@{/vacinarAnimal(id=${animal.id_animal})}">Vacinar</a></td>
 
                         </td>
-                        <td> <a style="background-color: #004275; color: white"
-                                th:href="@{/vacinacaoPorAnimal(id=${animal.id_animal})}">Visualizar Vacinas</a></td>
+                        <td> <a class="btn text-light" style="background-color: #004275;"
+                                th:href="@{/vacinacaoPorAnimal(id=${animal.id_animal})}">Cartão de Vacinas</a></td>
                         </td>
                     </tr>
                 </tbody>
