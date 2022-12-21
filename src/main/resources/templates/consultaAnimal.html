@@ -7,7 +7,6 @@
             <table class="table table-light">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Tutor</th>
                         <th scope="col">Espécie</th>
@@ -20,7 +19,6 @@
                 </thead>
                 <tbody>
                     <tr th:each="animal : ${animais}">
-                        <th scope="row" th:text="${animal.id_animal}"></th>
                         <td th:text="${animal.nome_animal}"></td>
                         <td th:text="${animal.tutor.nome_cliente}"></td>
                         <td th:text="${animal.especie}"></td>
