@@ -1,35 +1,33 @@
 <html th:include="template :: modelo" lang="pt-br">
 <div th:fragment="conteudo">
-    <div class="container text-center p-3">
+    <div class="container  text-center">
+        <h1>Como podemos ajudar hoje?</h1>
         <div class="row  p-5">
             <div class="col">
                 <a href="/consultaClientes">
-                    <img th:src="@{img/user.png}" width="50%">
+                    <div class="shadow  bg-light p-2 mb rounded">
+                        <img th:src="@{img/USERG.png}" width="50%">
+                        <h3>Clientes</h3>
+                    </div>
                 </a>
-                <h3>Clientes</h3>
             </div>
             <div class="col">
                 <a href="/consultaAnimal">
-                    <img th:src="@{img/cat.png}" width="50%">
+                    <div class="shadow  bg-light p-2 mb rounded">
+                        <img th:src="@{img/dog.png}" width="50%">
+                        <h3>Animais</h3>
+                    </div>
                 </a>
-                <h3>Animais</h3>
-
             </div>
-        </div>
-        <div class="row">
+
             <div class="col">
+
                 <a href="/consultaVacinas">
-                    <img th:src="@{img/syringe.png}" width="50%">
+                    <div class="shadow  bg-light p-2 mb rounded">
+                        <img th:src="@{img/vacinas.png}" width="50%">
+                        <h3>Vacinas</h3>
+                    </div>
                 </a>
-                <h3>Vacinas</h3>
-
-            </div>
-            <div class="col">
-                <a href="/vacinacaoAnimal">
-                    <img th:src="@{img/vaccination (1).png}" width="50%">
-                </a>
-                <h3>Cartão de Vacinas</h3>
-
             </div>
         </div>
     </div>
