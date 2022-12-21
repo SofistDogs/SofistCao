@@ -1,43 +1,44 @@
 <html th:include="template :: modelo" lang="pt-br">
 <div th:fragment="conteudo">
+    <div class="shadow  bg-light p-5 mb-5 rounded">
 
-    <h1 class="text-center">Adicione uma nova vacina</h1>
-    <div class="text-center mb-3">
-        <h2 class="d-inline">Animal: </h2>
-        <h2 class="d-inline" th:text="${animal.nome_animal}"></h2>
+        <div class="text-center mb-3">
+            <h1 class="d-inline">Adicione uma nova vacina para </h1>
+            <h1 class="d-inline text-danger" th:text="${animal.nome_animal}"></h1>
+        </div>
+
+        <form action="/vacinarAnimal" method="post" th:object="${procedimento}">
+            <div class="mb-3" hidden>
+                <label for="batata" class="form-label">Animal</label>
+                <select type="hidden" th:field="*{animal.id_animal}" class="form-select form-select" id="batata">
+                    <option th:each="animal : ${animal}" th:value="${animal.id_animal}" th:text="${animal.nome_animal}">
+                    </option>
+                </select>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="vacina" class="form-label">Vacina</label>
+                <select th:field="*{vacina.id_vacina}" class="form-select form-select" id="vacina">
+                    <option th:each="vacina : ${vacina}" th:value="${vacina.id_vacina}" th:text="${vacina.nome_vacina}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="tipoVac" class="form-label">Data</label>
+                <input type="date" id="tipoVac" class="form-control" th:field="*{data_vacinacao}" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="tipoVac" class="form-label">Observações</label>
+                <input type="text" id="tipoVac" class="form-control" placeholder="Alguma observação? (Opcional)"
+                    th:field="*{observacoes}">
+            </div>
+
+            <button type="submit" class="btn text-light" style="background-color: #004275;">Cadastrar</button>
+        </form>
     </div>
-
-    <form action="/vacinarAnimal" method="post" th:object="${procedimento}">
-        <div class="mb-3" hidden>
-            <label for="batata" class="form-label">Animal</label>
-            <select type="hidden" th:field="*{animal.id_animal}" class="form-select form-select" id="batata">
-                <option th:each="animal : ${animal}" th:value="${animal.id_animal}" th:text="${animal.nome_animal}">
-                </option>
-            </select>
-        </div>
-
-
-        <div class="mb-3">
-            <label for="vacina" class="form-label">Vacina</label>
-            <select th:field="*{vacina.id_vacina}" class="form-select form-select" id="vacina">
-                <option th:each="vacina : ${vacina}" th:value="${vacina.id_vacina}" th:text="${vacina.nome_vacina}">
-                </option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label for="tipoVac" class="form-label">Data</label>
-            <input type="date" id="tipoVac" class="form-control" th:field="*{data_vacinacao}" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="tipoVac" class="form-label">Observações</label>
-            <input type="text" id="tipoVac" class="form-control" placeholder="Alguma observação? (Opcional)"
-                th:field="*{observacoes}">
-        </div>
-
-        <button type="submit" class="btn text-light" style="background-color: #004275;">Cadastrar</button>
-    </form>
 </div>
 
 </html>
