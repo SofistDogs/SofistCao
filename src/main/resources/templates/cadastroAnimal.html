@@ -1,55 +1,56 @@
 <html th:include="template :: modelo" lang="pt-br">
 <div th:fragment="conteudo">
+    <div class="shadow  bg-light p-5 mb-5 rounded">
+        <h1 class="text-center">Novo Animal:</h1>
+        <form class=" p-2 mb " action="/cadastroAnimal" method="post" th:object="${animal}">
+            <div class="mb-3">
+                <label for="nomePet" class="form-label">Nome</label>
+                <input type="text" id="nomePet" class="form-control" placeholder="Como você chama seu pet?"
+                    th:field="*{nome_animal}" required>
+            </div>
+            <div class="mb-3">
+                <label for="tipoPet" class="form-label">Qual é o seu animal?</label>
+                <input type="text" id="nomePet" class="form-control"
+                    placeholder="Gato? Cachorro? Coelho? Se da para vacinar da para cadastrar :)" th:field="*{especie}"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="raca" class="form-label">Raça</label>
+                <input type="text" id="raca" class="form-control" placeholder="Qual a raça dele?" th:field="*{raca}"
+                    required>
+            </div>
 
-    <form action="/cadastroAnimal" method="post" th:object="${animal}">
-        <h1 class="text-center">Cadastre seu pet aqui</h1>
-        <div class="mb-3">
-            <label for="nomePet" class="form-label">Nome</label>
-            <input type="text" id="nomePet" class="form-control" placeholder="Como você chama seu pet?"
-                th:field="*{nome_animal}" required>
-        </div>
-        <div class="mb-3">
-            <label for="tipoPet" class="form-label">Qual é o seu animal?</label>
-            <input type="text" id="nomePet" class="form-control"
-                placeholder="Gato? Cachorro? Coelho? Se da para vacinar da para cadastrar :)" th:field="*{especie}"
-                required>
-        </div>
-        <div class="mb-3">
-            <label for="raca" class="form-label">Raça</label>
-            <input type="text" id="raca" class="form-control" placeholder="Qual a raça dele?" th:field="*{raca}"
-                required>
-        </div>
+            <div class="mb-3">
+                <label for="dtNasc" class="form-label">Data de Nascimento</label>
+                <input type="date" id="dtNasc" class="form-control" placeholder="dd/mm/yyyy" th:field="*{data_nasc}"
+                    required>
+            </div>
+            <div>
 
-        <div class="mb-3">
-            <label for="dtNasc" class="form-label">Data de Nascimento</label>
-            <input type="date" id="dtNasc" class="form-control" placeholder="dd/mm/yyyy" th:field="*{data_nasc}"
-                required>
-        </div>
-        <div>
+                <label for="" class="form-label">Sexo</label>
+            </div>
+            <div class="form-check form-check-inline mb-3">
 
-            <label for="" class="form-label">Sexo</label>
-        </div>
-        <div class="form-check form-check-inline mb-3">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioF" value="F"
+                    th:field="*{sexo_animal}" required>
+                <label class="form-check-label" for="inlineRadioF">F</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioM" value="M"
+                    th:field="*{sexo_animal}" required>
+                <label class="form-check-label" for="inlineRadioM">M</label>
+            </div>
+            <div class="mb-3">
+                <label for="tipo.id" class="form-label">Tutor</label>
+                <select th:field="*{tutor.id_cliente}" class="form-control">
+                    <option th:each="tutor : ${cliente}" th:value="${tutor.id_cliente}" th:text="${tutor.nome_cliente}">
+                    </option>
+                </select>
+            </div>
 
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioF" value="F"
-                th:field="*{sexo_animal}" required>
-            <label class="form-check-label" for="inlineRadioF">F</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioM" value="M"
-                th:field="*{sexo_animal}" required>
-            <label class="form-check-label" for="inlineRadioM">M</label>
-        </div>
-        <div class="mb-3">
-            <label for="tipo.id" class="form-label">Tutor</label>
-            <select th:field="*{tutor.id_cliente}" class="form-control">
-                <option th:each="tutor : ${cliente}" th:value="${tutor.id_cliente}" th:text="${tutor.nome_cliente}">
-                </option>
-            </select>
-        </div>
-
-        <button type="submit" class="btn text-light" style="background-color: #004275;">Cadastrar</button>
-    </form>
+            <button type="submit" class="btn text-light" style="background-color: #004275;">Cadastrar</button>
+        </form>
+    </div>
 </div>
 
 </html>
