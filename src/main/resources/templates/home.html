@@ -1,33 +1,35 @@
 <html th:include="template :: modelo" lang="pt-br">
 <div th:fragment="conteudo">
-    <div class="container  text-center">
-        <h1>Como podemos ajudar hoje?</h1>
-        <div class="row  p-5">
-            <div class="col">
-                <a href="/consultaClientes">
-                    <div class="shadow  bg-light p-2 mb rounded">
-                        <img th:src="@{img/USERG.png}" width="50%">
-                        <h3>Clientes</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="/consultaAnimal">
-                    <div class="shadow  bg-light p-2 mb rounded">
-                        <img th:src="@{img/dog.png}" width="50%">
-                        <h3>Animais</h3>
-                    </div>
-                </a>
-            </div>
+    <div class="container-fluid text-center ">
+        <div>
+            <h1>Como podemos ajudar hoje?</h1>
+            <div class="row p-5">
+                <div class="col">
+                    <a href="/consultaClientes">
+                        <div class="shadow  bg-light p-2 mb rounded">
+                            <img th:src="@{img/USERG.png}" width="50%">
+                            <h3>Clientes</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="/consultaAnimal">
+                        <div class="shadow  bg-light p-2 mb rounded">
+                            <img th:src="@{img/dog.png}" width="50%">
+                            <h3>Animais</h3>
+                        </div>
+                    </a>
+                </div>
 
-            <div class="col">
+                <div class="col">
 
-                <a href="/consultaVacinas">
-                    <div class="shadow  bg-light p-2 mb rounded">
-                        <img th:src="@{img/vacinas.png}" width="50%">
-                        <h3>Vacinas</h3>
-                    </div>
-                </a>
+                    <a href="/consultaVacinas">
+                        <div class="shadow  bg-light p-2 mb rounded">
+                            <img th:src="@{img/vacinas.png}" width="50%">
+                            <h3>Vacinas</h3>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
