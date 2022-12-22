@@ -36,7 +36,7 @@ public class VacinaRepository {
     }
 
     public void saveModification(Vacina vacina) {
-        String sql = "update vacina set NOME_VACINA=?, PERIODICIDADE=?, TIPO_VACINA=?, DESC_VACINA=? where ID_CLIENTE =?";
+        String sql = "update vacina set NOME_VACINA=?, PERIODICIDADE=?, TIPO_VACINA=?, DESC_VACINA=? where ID_VACINA =?";
         jdbc.update(sql, vacina.getNome_vacina(), vacina.getPeriodicidade(),
                 vacina.getTipo_vacina(), vacina.getDesc_vacina(), vacina.getId_vacina());
     }
