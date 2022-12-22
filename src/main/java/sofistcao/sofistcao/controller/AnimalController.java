@@ -33,7 +33,7 @@ public class AnimalController {
     @PostMapping("/cadastroAnimal")
     public String gravaNovoAnimal(Animal animal) {
         repository.save(animal);
-        return "redirect:/home";
+        return "redirect:/consultaAnimal";
     }
 
     @GetMapping("/consultaAnimal")
@@ -54,7 +54,7 @@ public class AnimalController {
     @PostMapping("gravaanimalmodificado")
     public String gravaAnimalModificado(Animal animal) {
         repository.saveModification(animal);
-        return "redirect:/home";
+        return "redirect:/consultaAnimal";
     }
 
 }

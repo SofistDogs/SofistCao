@@ -25,7 +25,7 @@ public class ClienteController {
     @PostMapping("/cadastroCliente")
     public String gravaNovoCliente(Cliente cliente) {
         repository.save(cliente);
-        return "redirect:/home";
+        return "redirect:/consultaClientes";
     }
 
     @GetMapping("/consultaClientes")
@@ -45,7 +45,7 @@ public class ClienteController {
     @PostMapping("gravaclientemodificado")
     public String gravaClienteModificado(Cliente cliente) {
         repository.saveModification(cliente);
-        return "redirect:/home";
+        return "redirect:/consultaClientes";
     }
 
 }

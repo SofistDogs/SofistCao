@@ -37,7 +37,7 @@ public class ProcedimentoController {
     @PostMapping("/vacinarAnimal")
     public String gravarNovoProcedimento(Procedimento procedimento) {
         repository.save(procedimento);
-        return "redirect:/home";
+        return "redirect:/vacinacaoAnimal";
     }
 
     @GetMapping("/vacinacaoAnimal")

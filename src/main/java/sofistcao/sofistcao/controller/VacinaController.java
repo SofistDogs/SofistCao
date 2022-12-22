@@ -25,7 +25,7 @@ public class VacinaController {
     @PostMapping("/cadastroVacina")
     public String gravaNovaVacina(Vacina vacina) {
         repository.save(vacina);
-        return "redirect:/home";
+        return "redirect:/consultaVacinas";
     }
 
     @GetMapping("/consultaVacinas")
@@ -45,7 +45,7 @@ public class VacinaController {
     @PostMapping("gravavacinamodificado")
     public String gravaVacinaModificado(Vacina vacina) {
         repository.saveModification(vacina);
-        return "redirect:/home";
+        return "redirect:/consultaVacinas";
     }
 
 }
